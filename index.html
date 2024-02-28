@@ -6,9 +6,18 @@
     <title>...</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
         *{
             margin: 0px;
             padding:0px;
+        }
+
+        @keyframes transparency{
+            from{
+                opacity: 0;
+            } to {
+                opacity: 1;
+            }
         }
         body{
             background-color: black;
@@ -26,17 +35,62 @@
             margin-right: 50%;
             opacity: 0;
         }
+
+        .rodarAnimação{
+            animation-name: transparency;
+            animation-duration: 30s;
+            animation-timing-function: none;
+            animation-fill-mode: forwards;
+            animation-delay: 2s;
+        }
+        .mostrartxt1{
+            animation-name: transparency;
+            animation-duration: 10s;
+            animation-timing-function: none;
+            animation-fill-mode: forwards;
+            animation-delay: 25s;
+        }
+        .mostrartxt2{
+            animation-name: transparency;
+            animation-duration: 10s;
+            animation-timing-function: none;
+            animation-fill-mode: forwards;
+            animation-delay: 30s;
+        }
+        .mostrartxt3{
+            animation-name: transparency;
+            animation-duration: 10s;
+            animation-timing-function: none;
+            animation-fill-mode: forwards;
+            animation-delay: 35s;
+        }
+
+        #txt1, #txt2, #txt3{
+            opacity: 0;
+        }
+
+        #textos {
+            align-self: center;
+            text-align: center;
+            width: 50%;
+            margin-left: 51%;
+            margin-right: 51%;
+        }
     </style>
 </head>
 <body>
     <article id="content">
         <img src="assets/sufferingmig.jpeg" alt="01010011 01110101 01100110 01100110 01100101 01110010 01101001 01101110 01100111 00100000 01001101 01101001 01100111" id="imagem">
     </article>
-    <audio class="musicbox" src="assets/CandyHeartz.mp3"></audio>
+    <article id="textos">
+        <p id="txt1">Triste... não?</p>
+        <p id="txt2">Ele não merecia isso...</p>
+        <p id="txt3">Imagino de quem foi a culpa...</p>
+    </article>
 
     <script>
         dialog()
-
+        
         function dialog(){
             musica = document.querySelector('audio.musicbox')
             alert("???: ...")
@@ -47,21 +101,23 @@
             alert("???: ...")
             alert("???: Como quiser...")
             alert("???: Espere só um pouco.")
-
-            musica.volume = .1
-            musica.play()
-
-            showMig()
             
+            var audio = new Audio('assets/CandyHeartz.mp3');
+            audio.play();
+            audio.loop = true;
+
+            showMig();
         }
 
         function showMig(){
-            transparency = 0
-            mig = document.querySelector("img#imagem")
-
-            while (transparency < 1){
-                mig.style.opacity = transparency + .05
-            }
+            mig = document.querySelector('img#imagem')
+            txt1 = document.querySelector('p#txt1')
+            txt2 = document.querySelector('p#txt2')
+            txt3 = document.querySelector('p#txt3')
+            mig.classList.add('rodarAnimação')
+            txt1.classList.add('mostrartxt1')
+            txt2.classList.add('mostrartxt2')
+            txt3.classList.add('mostrartxt3')
         }
     </script>
 </body>
