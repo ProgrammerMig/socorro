@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+        *{
+            margin: 0px;
+            padding:0px;
+        }
+        body{
+            background-color: black;
+            color: white;
+
+            font-family: "Kode Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #imagem{
+            width: 50%;
+            margin-left: 50%;
+            margin-right: 50%;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <article id="content">
+        <img src="assets/sufferingmig.jpeg" alt="01010011 01110101 01100110 01100110 01100101 01110010 01101001 01101110 01100111 00100000 01001101 01101001 01100111" id="imagem">
+    </article>
+    <audio class="musicbox" src="assets/CandyHeartz.mp3"></audio>
+
+    <script>
+        dialog()
+
+        function dialog(){
+            musica = document.querySelector('audio.musicbox')
+            alert("???: ...")
+            alert("???: Por que está aqui..?")
+            alert("???: ...")
+            alert("???: Você...")
+            alert("???: ... Quer vê-lo?")
+            alert("???: ...")
+            alert("???: Como quiser...")
+            alert("???: Espere só um pouco.")
+
+            musica.volume = .1
+            musica.play()
+
+            showMig()
+            
+        }
+
+        function showMig(){
+            transparency = 0
+            mig = document.querySelector("img#imagem")
+
+            while (transparency < 1){
+                mig.style.opacity = transparency + .05
+            }
+        }
+    </script>
+</body>
+</html>
